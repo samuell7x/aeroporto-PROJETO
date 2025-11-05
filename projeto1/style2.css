@@ -1,0 +1,59 @@
+.card-promo .img-container {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-promo img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-promo:hover img {
+    transform: scale(1.1);
+}
+
+.card-promo {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.card-promo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1686286427717-5c506dd29dcb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1935'); /* caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 400px;
+}
+
+/* Escurece um pouco a imagem para o texto ficar legível */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* camada escura */
+}
+
+/* Garante que o texto fique visível por cima */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1,
+.hero-section p {
+    color: #fff;
+}
