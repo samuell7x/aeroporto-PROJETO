@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 
-// garante que exista a ação
+
 $acao = $_REQUEST['acao'] ?? '';
 
 switch ($acao) {
@@ -11,13 +11,13 @@ switch ($acao) {
         $email = $conn->real_escape_string($_POST['email'] ?? '');
         $senha = $conn->real_escape_string($_POST['senha'] ?? '');
 
-        // verifica campos obrigatórios
+        
         if (empty($nome) || empty($email) || empty($senha)) {
             echo "<script>alert('Preencha todos os campos.'); location.href='index.php?page=cadastro';</script>";
             exit;
         }
 
-        // evita e-mail duplicado
+       
         $check = $conn->query("SELECT id FROM usuarios WHERE email = '{$email}'");
         if ($check && $check->num_rows > 0) {
             echo "<script>alert('Esse e-mail já está cadastrado!'); location.href='index.php?page=cadastro';</script>";
@@ -90,3 +90,4 @@ switch ($acao) {
      
 }
 ?>
+
